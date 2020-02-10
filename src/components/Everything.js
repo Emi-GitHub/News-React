@@ -4,7 +4,8 @@ import NewsList from './NewsList';
 import ButtonBar from './ButtonBar';
 import SearchBarEverything from './SearchBarEverything';
 import axios from 'axios';
-import "../styles/MyStyle.css";
+import '../styles/Home.css';
+import '../styles/Everything.css';
 
 class Everything extends Component { 
     state = {
@@ -16,11 +17,11 @@ class Everything extends Component {
         radio1: true,
         radio2: false,
         radio3: false,
-        backgroundClass: 'ui text loader', 
-        div1: 'moja ui segment',
-        div2: 'ui active inverted dimmer',
-        forSearch: 'mojaSearch',
-        forHeader: 'mojaSearch'
+        background: 'ui text loader', 
+        loaded: 'loaded-api',
+        loading: 'ui active inverted dimmer',
+        forSearch: 'hide-app',
+        forHeader: 'hide-app'
     }
     EverythingApi = term => {
         this.setState({
@@ -42,18 +43,17 @@ class Everything extends Component {
                 news: response.data.articles,
                 checkRadio: true,
                 rememberTerm: q,
-                backgroundClass: 'background',
-                div1: 'nothing',
-                div2: 'nothing',
+                background: 'background',
+                loaded: 'nothing',
+                loading: 'nothing',
                 forSearch: 'nothing',
-                forHeader: 'TopHeadlinesCard'
+                forHeader: 'topheadlines-card'
             })
             if(this.state.news.length===0){
                 this.setState({
                     showError: true
                 })
             }
-            console.log("EverythingApi",response.data.articles)
         })  
     }
     EverythingApiCheck = ( term, radio ) => {
@@ -102,21 +102,20 @@ class Everything extends Component {
                     showError: true
                 })
             }
-            console.log("EverythingApiCheck",response.data.articles)
         })  
     }
     render() {
         if(this.state.showError || this.state.showErrorQ){
             return (
                 <div>
-                    <h1 style={{fontSize:"50px", textAlign:"center", marginTop:"50px"}}>Not found!</h1>
+                    <h1>Not found!</h1>
                 </div>
             )
         }
         return (
-           <div className={this.state.div1}>
-               <div className={this.state.div2}>
-                    <div className={this.state.backgroundClass}>
+           <div className={this.state.loaded}>
+               <div className={this.state.loading}>
+                    <div className={this.state.background}>
                         <div className={this.state.forSearch}>
                             <SearchBarEverything 
                                 EverythingApi={this.EverythingApi} 
@@ -130,9 +129,9 @@ class Everything extends Component {
                             />
                         </div>
                         <div className={this.state.forSearch}>
-                            <div className="TopHeadlinesCard">
-                                <div className="myTransparentDiv" >
-                                    <Link to="/" onClick={this.onHomeClick} className="goBack">
+                            <div className="topheadlines-card">
+                                <div className="transparent-div">
+                                    <Link to="/" onClick={this.onHomeClick} className="go-back">
                                         <i className="left chevron icon"/>
                                         Go back to home page
                                     </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsCard from './NewsCard';
 import '../styles/NewsList.css'
-import '../styles/MyStyle.css';
+import '../styles/LoadMore.css';
 
 function LoadMore(props) {
     const news = props.news.map((item, i)=> {

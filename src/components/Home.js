@@ -3,16 +3,16 @@ import axios from 'axios';
 import NewsList from './NewsList';
 import ButtonBar from './ButtonBar';
 import SearchBarHome from './SearchBarHome';
-import "../styles/MyStyle.css";
+import '../styles/Home.css';
 
 class Home extends Component {
     state = {
         headlines: [],
-        backgroundClass: 'ui text loader', 
-        div1: 'moja ui segment',
-        div2: 'ui active inverted dimmer',
-        forSearch: 'mojaSearch',
-        forHeader: 'mojaSearch'
+        background: 'ui text loader', 
+        loaded: 'loaded-api',
+        loading: 'ui active inverted dimmer',
+        forSearch: 'hide-app',
+        forHeader: 'hide-app'
     }
     TopHeadlinesApi = () => {
         const BASE_URL = 'https://newsapi.org/v2/top-headlines?';
@@ -21,13 +21,12 @@ class Home extends Component {
         axios.get(url).then(response => {
             this.setState({
                 headlines: response.data.articles,
-                backgroundClass: 'background',
-                div1: 'nothing',
-                div2: 'nothing',
+                background: 'background',
+                loaded: 'nothing',
+                loading: 'nothing',
                 forSearch: 'nothing',
-                forHeader: 'TopHeadlinesCard'
+                forHeader: 'topheadlines-card'
             })
-        console.log("TopHeadlinesApi in Home.js",response.data.articles)
         })  
     }
     componentDidMount(){
@@ -35,14 +34,14 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className={this.state.div1} >
-                <div className={this.state.div2}>
-                    <div className={this.state.backgroundClass}>
+            <div className={this.state.loaded} >
+                <div className={this.state.loading}>
+                    <div className={this.state.background}>
                         <div className={this.state.forSearch}>
                             <SearchBarHome />
                         </div>
                         <div className={this.state.forHeader}>
-                            <div className="myTransparentDiv">
+                            <div className="transparent-div">
                                 <div className="header-top">Top headlines</div>
                                 <NewsList news={this.state.headlines} />
                                 <ButtonBar news={this.state.headlines} />
