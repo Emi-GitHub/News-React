@@ -48,7 +48,8 @@ class Everything extends Component {
                     showError: true
                 })
             }
-        })  
+        })
+        .catch(error => console.error('On create student error', error)) 
     }
     EverythingApiCheck = ( term, radio ) => {
         var sortBy;
@@ -91,7 +92,8 @@ class Everything extends Component {
                     showError: true
                 })
             }
-        })  
+        })
+        .catch(error => console.error('On create student error', error))  
     }
     render() {
         if(this.state.showError){

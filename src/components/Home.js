@@ -27,7 +27,8 @@ class Home extends Component {
                 forSearch: 'nothing',
                 forHeader: 'topheadlines-card'
             })
-        })  
+        })
+        .catch(error => console.error('On create student error', error))  
     }
     componentDidMount(){
         this.TopHeadlinesApi()
