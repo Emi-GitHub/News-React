@@ -1,39 +1,28 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/MyStyle.css';
+import '../styles/NewsCard.css';
 
 class NewsCard extends Component {
     render(){
         let backgroundImgStyle = {
             backgroundImage: 'url(' + this.props.pic + ')'
         }
-        /*const CardStyle = {
-            height: "460px",
-            float: "left",
-            marginLeft:"24px",
-            marginRight:"24px",
-            marginBottom:"25px",
-            backgroundColor:"white",
-            paddingLeft:"10px"
-        }*/
         const PictureCard = () => {
             if(this.props.pic==="null") return null
-            else return <div style={backgroundImgStyle} className="cardPhoto"/> 
+            else return <div style={backgroundImgStyle} className="card-photo"/> 
         }
         return (
-            <div className="cardStyle mt-0 " key={this.props.item.url}>
+            <div className="card-style" key={this.props.item.url}>
                 {PictureCard()}
-                <h3>{this.props.item.title}</h3>
-                <div className="cardDescription">{this.props.item.description}</div>
-                <button 
-                    className="readFullArticleButton ui black basic button" 
-                    style={{marginTop:"50px"}}>
-                        <Link 
-                            to={{pathname:'/article', 
-                            state: {from: this.props.item}}} 
-                            className="linkToArticle">
-                                Read full article
-                        </Link>
+                <h3 className="card-header">{this.props.item.title}</h3>
+                <div className="card-description">{this.props.item.description}</div>
+                <button className="article-button ui black basic button">
+                    <Link 
+                        to={{pathname:'/article', 
+                        state: {from: this.props.item}}} 
+                        className="article-link">
+                            Read full article
+                    </Link>
                 </button>
             </div>
         )

@@ -72,7 +72,7 @@ class SearchBarEverything extends Component {
     return(
         <div>
             <form 
-                className="ui form container" style={{/*background: "rgba(6, 6, 7, 0.58)",*/ marginTop:"10px"}} onSubmit={this.onFormSubmit}>
+                className="ui form container" style={{marginTop:"10px"}} onSubmit={this.onFormSubmit}>
                 <div className="field" >
                     <div className="SearchBar">
                         <div className="ui search" >

@@ -43,7 +43,7 @@ class Home extends Component {
                         </div>
                         <div className={this.state.forHeader}>
                             <div className="myTransparentDiv">
-                                <div className="HeaderTop">Top headlines</div>
+                                <div className="header-top">Top headlines</div>
                                 <NewsList news={this.state.headlines} />
                                 <ButtonBar news={this.state.headlines} />
                             </div>

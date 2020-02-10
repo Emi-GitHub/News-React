@@ -1,11 +1,10 @@
 import React from 'react';
 import NewsCard from './NewsCard';
-import '../styles/MyStyle.css';
+import '../styles/NewsList.css';
 
 function NewsList(props) {
-    const news = props.news.map((item, i=0)=> {
-        i=i+1;
-        if(i<=16) return (<NewsCard key={item.url} item={item} pic={item.urlToImage} />)
+    const news = props.news.map((item, i)=> {
+        if(i<20) return (<NewsCard key={item.url} item={item} pic={item.urlToImage} />)
         return true;
     }); 
     return (

@@ -11,6 +11,7 @@ class Article extends Component {
                     <img 
                         className="ui fluid image article-image" 
                         src={articleImage} 
+                        alt="not found"
                     /> 
                 </div>
             )

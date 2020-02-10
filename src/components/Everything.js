@@ -106,17 +106,10 @@ class Everything extends Component {
         })  
     }
     render() {
-        console.log(this.props.location.state.term)
         if(this.state.showError || this.state.showErrorQ){
             return (
                 <div>
-                    <h1 style={{fontSize:"150px", textAlign:"center", marginTop:"50px"}}>Oops!</h1>
-                    <div className="ui container negative message" style={{marginTop:"100px", height:"150px"}}>
-                        <div className="header" >
-                            <p style={{fontSize:"30px"}}>We can't seem to find the page you're lookong for.</p>
-                        </div>
-                        <div style={{fontSize:"20px"}}>Error code: 404</div> 
-                    </div> 
+                    <h1 style={{fontSize:"50px", textAlign:"center", marginTop:"50px"}}>Not found!</h1>
                 </div>
             )
         }
@@ -143,7 +136,7 @@ class Everything extends Component {
                                         <i className="left chevron icon"/>
                                         Go back to home page
                                     </Link>
-                                    <div className="HeaderTop">Search for...</div>
+                                    <div className="header-top">Search for...</div>
                                     <NewsList news={this.state.news} />
                                     <ButtonBar news={this.state.news} /> 
                                 </div>
