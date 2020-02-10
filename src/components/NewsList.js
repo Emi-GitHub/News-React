@@ -9,7 +9,7 @@ function NewsList(props) {
         return true;
     }); 
     return (
-        <div>
+        <div className="cards-wrapper">
             {news}
         </div>
     )

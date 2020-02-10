@@ -1,0 +1,22 @@
+/*desktops*/
+@media screen and (min-width: 850px){
+    .header-article {
+        font-size: xx-large;
+    }
+    .article-light {
+        opacity: 0.5;
+    }
+    .article-desc {
+        font-size: 20px;
+    }
+    .article-content {
+        font-size: 15px;
+    }
+    .background-article {
+        height: 810px;
+        display: table-cell;
+    }
+    .article-top {
+        margin-top: 10px;
+    }
+}

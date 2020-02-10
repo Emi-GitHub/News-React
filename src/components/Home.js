@@ -42,7 +42,7 @@ class Home extends Component {
                             <SearchBarHome />
                         </div>
                         <div className={this.state.forHeader}>
-                            <div className="myTransparentDiv" >
+                            <div className="myTransparentDiv">
                                 <div className="HeaderTop">Top headlines</div>
                                 <NewsList news={this.state.headlines} />
                                 <ButtonBar news={this.state.headlines} />

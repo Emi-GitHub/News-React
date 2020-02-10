@@ -22,10 +22,10 @@ class SearchBarHome extends Component {
     render() {
     return(
         <div>
-            <form className="ui form container segment" style={{background: "rgba(212, 212, 226, 0.18)", marginTop:"10px"}} onSubmit={this.onFormSubmit}>
+            <form className="ui form container " style={{ /*background: "rgba(6, 6, 7, 0.58)"*/ /*"rgba(212, 212, 226, 0.18)",*/ marginTop:"10px"}} onSubmit={this.onFormSubmit}>
                 <div className="field" >
                     <div className="SearchBar">
-                        <div className="ui search" >
+                        <div className="ui search">
                                 <div className="ui icon input focus" style={{marginTop:"10px", opacity: "0.9"}}>
                                     <input 
                                         className="SearchBar"

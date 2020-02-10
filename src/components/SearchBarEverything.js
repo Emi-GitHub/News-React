@@ -25,8 +25,8 @@ class SearchBarEverything extends Component {
             return(
                 <div className="radioButton">
                     <div className="inline fields sortBySection">
-                        <label  style={{color:"white"}}>Sort by section:</label>
-                        <div className="field">
+                        <label  className="labelSort">Sort by section:</label>
+                        <div className="field setRadio">
                             <div className="ui radio checkbox" >
                                 <input 
                                     type="radio" 
@@ -34,6 +34,7 @@ class SearchBarEverything extends Component {
                                     value="radio1" 
                                     checked={this.props.radio1}  
                                     onChange={this.handleOptionChange}
+                                    className="radio-input"
                                 />
                                 <label style={{color:"white"}}> Popularity</label>
                             </div>
@@ -46,6 +47,7 @@ class SearchBarEverything extends Component {
                                     value="radio2" 
                                     checked={this.props.radio2}  
                                     onChange={this.handleOptionChange}
+                                    className="radio-input"
                                 />
                                 <label style={{color:"white"}}>Relevance</label>
                             </div>
@@ -58,6 +60,7 @@ class SearchBarEverything extends Component {
                                     value="radio3" 
                                     checked={this.props.radio3}  
                                     onChange={this.handleOptionChange}
+                                    className="radio-input"
                                 />
                                 <label style={{color:"white"}}>Published date</label>
                             </div>
@@ -69,7 +72,7 @@ class SearchBarEverything extends Component {
     return(
         <div>
             <form 
-                className="ui form container segment" style={{background: "rgba(212, 212, 226, 0.18)", marginTop:"10px"}} onSubmit={this.onFormSubmit}>
+                className="ui form container" style={{/*background: "rgba(6, 6, 7, 0.58)",*/ marginTop:"10px"}} onSubmit={this.onFormSubmit}>
                 <div className="field" >
                     <div className="SearchBar">
                         <div className="ui search" >

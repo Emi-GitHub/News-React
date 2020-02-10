@@ -1,7 +1,7 @@
 /*phones*/
 @media screen and (max-width: 500px){
     .background {
-        background-color: #BC8F8F;
+        background-color: lightsteelblue;
         height: auto;
         width: auto;
         background-position: center;
@@ -10,8 +10,20 @@
         overflow: hidden;
         position: absolute;
     }
+    .labelSort {
+        color: white !important;
+        font-size: medium !important;
+    }
+    .radioButton {
+        display: flex;
+        margin-top: 10px;
+    }
     .sortBySection {
-        inline-size: min-content;
+        font-size: medium !important;
+        /*flex: 1 0 auto;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .readFullArticleButton {
         position: absolute;
@@ -58,11 +70,28 @@
         margin-right: 15px;
         padding-bottom: 30px;
     }
+    .cards-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .cardDescription {
+        max-height: 100px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        /*white-space: nowrap;*/
+    }
+    h1, h2, h3, h4, h5 {
+        line-height: 1 !important;
+    }
 }
 /*tablets*/
 @media screen and (min-width: 501px){
     .background {
-        background-color: #BC8F8F;
+        background-image: url("../pictures/11.jpg");
+        /*background-color: #BC8F8F;*/
         height: auto;
         width: auto;
         background-position: center;
@@ -70,9 +99,6 @@
         background-size: cover;
         overflow: hidden;
         position: absolute;
-    }
-    .sortBySection {
-        inline-size: min-content;
     }
     .readFullArticleButton {
         position: absolute;
@@ -94,7 +120,6 @@
         margin-left: 20px;
         margin-right: 20px;
     }
-   
     .cardStyle {
         height: 460px;
         float: left;
@@ -118,12 +143,44 @@
         padding-right: 7px;
         padding-bottom: 30px;
     }
+    .cards-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .cardDescription {
+        max-height: 100px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        /*white-space: nowrap;*/
+    }
+    h1, h2, h3, h4, h5 {
+        line-height: 1 !important;
+    }
+    .labelSort {
+        color: white !important;
+        font-size: medium !important;
+    }
+    .radioButton {
+        display: flex;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .sortBySection {
+        font-size: medium !important;
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 /*desktops*/
 @media screen and (min-width: 850px){
     .background {
-        /*background-image: url("../pictures/pic.jpg");*/
-        background-color: #BC8F8F;
+        background-image: url("../pictures/11.jpg");
+        /*background-color: #BC8F8F;*/
+        /*background-color: seashell;*/
         height: auto;
         width: auto;
         background-position: center;
@@ -139,8 +196,15 @@
         font-size: xx-large;
     }
     .radioButton {
-        margin-top: 15px;
-        margin-left: 300px;
+        display: flex;
+        margin-top: 10px;
+    }
+    .sortBySection {
+        font-size: medium !important;
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .ui.segment {
         margin-right: 45px;
@@ -162,7 +226,7 @@
         height: 810px;
     }
     .mySegment {
-        background: rgba(6, 6, 7, 0.58);
+        /*background: rgba(6, 6, 7, 0.58);*/
         display: inline-block;
         margin-left: 20px;
         margin-right: 20px;
@@ -182,7 +246,8 @@
         border-radius: 5px;
     }
     .myTransparentDiv {
-        background: rgba(6, 6, 7, 0.58);
+        /*background: rgba(6, 6, 7, 0.58);*/
+        /*background-color: #ebe3e0;*/
         display: inline-block;
         border-radius: 5px;
         padding-top: 20px;
@@ -192,6 +257,32 @@
         padding-right: 50px;
         padding-bottom: 30px;
     }
+    /*.ui.segment:last-child {
+        margin-bottom: 15px;
+        background-color: #ebe3e0;
+    }*/
+    .cards-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .cardDescription {
+        max-height: 300px;
+        margin-top: 13px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /*white-space: nowrap;*/
+    }
+    h1, h2, h3, h4, h5 {
+        line-height: 1 !important;
+    }
+    .labelSort {
+        color: white !important;
+        display: inline-block !important;
+        vertical-align: top;
+    }
 }
 
 
@@ -200,7 +291,7 @@
     color: black;
 }
 .goBack {
-    color: #BC8F8F;
+    color: #bdbdbd;
 }
 .TopHeadlinesCard {
     padding: 20px;
@@ -214,8 +305,9 @@
 }
 .HeaderTop {
     text-align: center;
-    color: #BC8F8F;
-    font-family: Snell Roundhand, cursive;
+    /*color: #bdbdbd;*/
+    color: white;
+    font-family: 'Roboto', sans-serif;
     font-size: 30px;
     margin-bottom: 25px;
     margin-top: 5px;
@@ -242,9 +334,8 @@
 .ui.form .inline.fields {
     display: -webkit-inline-box;
 }
-@media only screen and (max-width: 1080px) {
-    .radioButton {
-        margin-top: 15px;
-        margin-left: 100px;
-    }
+
+
+h1, h2, h3, h4, h5 {
+    line-height: 1 !important;
 }

@@ -23,8 +23,8 @@ class NewsCard extends Component {
         return (
             <div className="cardStyle mt-0 " key={this.props.item.url}>
                 {PictureCard()}
-                <h3 style={{maxHeight:"100px", marginTop:"13px"}}>{this.props.item.title}</h3>
-                <div>{this.props.item.description}</div>
+                <h3>{this.props.item.title}</h3>
+                <div className="cardDescription">{this.props.item.description}</div>
                 <button 
                     className="readFullArticleButton ui black basic button" 
                     style={{marginTop:"50px"}}>

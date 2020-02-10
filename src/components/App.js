@@ -5,7 +5,6 @@ import Home from './Home';
 import Everything from './Everything';
 import Article from './Article';
 import "../styles/MyStyle.css";
-//API: https://newsapi.org/ 
 
 class App extends Component {
     render() {

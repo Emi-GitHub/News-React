@@ -3,7 +3,6 @@ import '../styles/MyStyle.css';
 
 class Article extends Component {
      render() {
-         console.log(this.props.location.state.from)
          const PictureCard = () => {
             if(this.props.location.state.from.urlToImage==="null") return null
             else return (
@@ -11,7 +10,8 @@ class Article extends Component {
                     <img 
                         className="ui fluid image" 
                         style={{maxWidth:"800px", marginLeft:"auto", marginRight:"auto"}} 
-                        src={this.props.location.state.from.urlToImage} /> 
+                        src={this.props.location.state.from.urlToImage} 
+                    /> 
                 </div>
             )
         }
