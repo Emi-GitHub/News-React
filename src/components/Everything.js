@@ -9,7 +9,7 @@ import "../styles/MyStyle.css";
 class Everything extends Component { 
     state = {
         news: [],
-        zapamtiTerm:'',
+        rememberTerm:'',
         checkRadio: true,
         showError: false,
         showErrorQ: false,
@@ -41,7 +41,7 @@ class Everything extends Component {
             this.setState({
                 news: response.data.articles,
                 checkRadio: true,
-                zapamtiTerm: q,
+                rememberTerm: q,
                 backgroundClass: 'background',
                 div1: 'nothing',
                 div2: 'nothing',
@@ -95,7 +95,7 @@ class Everything extends Component {
             this.setState({
                 news: response.data.articles,
                 checkRadio: true,
-                zapamtiTerm: q
+                rememberTerm: q
             })
             if(this.state.news.length===0){
                 this.setState({
@@ -122,7 +122,7 @@ class Everything extends Component {
                                 EverythingApi={this.EverythingApi} 
                                 EverythingApiCheck={this.EverythingApiCheck} 
                                 checkRadio={this.state.checkRadio} 
-                                zapamtiTerm={this.state.zapamtiTerm} 
+                                rememberTerm={this.state.rememberTerm} 
                                 radio1={this.state.radio1} 
                                 radio2={this.state.radio2} 
                                 radio3={this.state.radio3}

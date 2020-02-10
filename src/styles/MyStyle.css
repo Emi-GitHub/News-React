@@ -10,21 +10,6 @@
         overflow: hidden;
         position: absolute;
     }
-    .labelSort {
-        color: white !important;
-        font-size: medium !important;
-    }
-    .radioButton {
-        display: flex;
-        margin-top: 10px;
-    }
-    .sortBySection {
-        font-size: medium !important;
-        /*flex: 1 0 auto;*/
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 40px;
@@ -98,22 +83,7 @@
     h1, h2, h3, h4, h5 {
         line-height: 1 !important;
     }
-    .labelSort {
-        color: white !important;
-        font-size: medium !important;
-    }
-    .radioButton {
-        display: flex;
-        margin-top: 10px;
-        text-align: center;
-    }
-    .sortBySection {
-        font-size: medium !important;
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    
 }
 /*desktops*/
 @media screen and (min-width: 850px){
@@ -129,17 +99,7 @@
         overflow: hidden;
         position: absolute; 
     }
-    .radioButton {
-        display: flex;
-        margin-top: 10px;
-    }
-    .sortBySection {
-        font-size: medium !important;
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    
     .ui.segment {
         margin-right: 45px;
         margin-left: 45px;
@@ -179,11 +139,7 @@
     h1, h2, h3, h4, h5 {
         line-height: 1 !important;
     }
-    .labelSort {
-        color: white !important;
-        display: inline-block !important;
-        vertical-align: top;
-    }
+    
 }
 
 

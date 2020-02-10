@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import "../styles/MyStyle.css";
+import "../styles/SearchBarEverything.css";
+import "../styles/SearchBar.css";
 
 class SearchBarEverything extends Component {
     state = {
@@ -18,15 +19,15 @@ class SearchBarEverything extends Component {
         })
     }
     handleOptionChange = event => {
-        this.props.EverythingApiCheck(this.props.zapamtiTerm, event.target.value);
+        this.props.EverythingApiCheck(this.props.rememberTerm, event.target.value);
     }
     render() {
         const searchForOptions = () => {
             return(
-                <div className="radioButton">
-                    <div className="inline fields sortBySection">
-                        <label  className="labelSort">Sort by section:</label>
-                        <div className="field setRadio">
+                <div className="radio-button">
+                    <div className="inline fields sort-section">
+                        <label className="label-sort"> Sort by section: </label>
+                        <div className="field">
                             <div className="ui radio checkbox" >
                                 <input 
                                     type="radio" 
@@ -34,9 +35,8 @@ class SearchBarEverything extends Component {
                                     value="radio1" 
                                     checked={this.props.radio1}  
                                     onChange={this.handleOptionChange}
-                                    className="radio-input"
                                 />
-                                <label style={{color:"white"}}> Popularity</label>
+                                <label className="sort-radio"> Popularity</label>
                             </div>
                         </div>
                         <div className="field">
@@ -47,9 +47,8 @@ class SearchBarEverything extends Component {
                                     value="radio2" 
                                     checked={this.props.radio2}  
                                     onChange={this.handleOptionChange}
-                                    className="radio-input"
                                 />
-                                <label style={{color:"white"}}>Relevance</label>
+                                <label className="sort-radio">Relevance</label>
                             </div>
                         </div>
                         <div className="field">
@@ -60,38 +59,35 @@ class SearchBarEverything extends Component {
                                     value="radio3" 
                                     checked={this.props.radio3}  
                                     onChange={this.handleOptionChange}
-                                    className="radio-input"
                                 />
-                                <label style={{color:"white"}}>Published date</label>
+                                <label className="sort-radio">Published date</label>
                             </div>
                         </div>
                     </div>
                 </div>
             )
         }
-    return(
-        <div>
-            <form 
-                className="ui form container" style={{marginTop:"10px"}} onSubmit={this.onFormSubmit}>
-                <div className="field" >
-                    <div className="SearchBar">
+        return(
+            <div>
+                <form className="ui form container search-sort" onSubmit={this.onFormSubmit}>
+                    <div className="field" >
                         <div className="ui search" >
-                                <div className="ui icon input focus" style={{marginTop:"10px", opacity: "0.9"}}>
-                                    <input 
-                                        className="SearchBar"
-                                        type="text" 
-                                        value={this.state.term}
-                                        placeholder="Search news..."
-                                        onChange={this.onInputChange}
-                                    />
+                            <div className="ui icon input focus home-search" >
+                                <input
+                                    type="text" 
+                                    value={this.state.term}
+                                    placeholder="Search news..."
+                                    onChange={this.onInputChange}
+                                />
+                                <span onClick={this.onFormSubmit} className="search-icon">
                                     <i className="search icon"/>
-                                </div>
+                                </span>
+                            </div>
                         </div>
+                        {this.props.checkRadio ? searchForOptions() : null}
                     </div>
-                    {this.props.checkRadio ? searchForOptions() : null}
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
         )
     }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import "../styles/MyStyle.css";
-
+import "../styles/SearchBar.css";
 
 class SearchBarHome extends Component {
     state = {
@@ -20,31 +19,28 @@ class SearchBarHome extends Component {
         })
     }
     render() {
-    return(
-        <div>
-            <form className="ui form container " style={{ /*background: "rgba(6, 6, 7, 0.58)"*/ /*"rgba(212, 212, 226, 0.18)",*/ marginTop:"10px"}} onSubmit={this.onFormSubmit}>
-                <div className="field" >
-                    <div className="SearchBar">
+        return(
+            <div>
+                <form className="ui form container" onSubmit={this.onFormSubmit}>
+                    <div className="field" >
                         <div className="ui search">
-                                <div className="ui icon input focus" style={{marginTop:"10px", opacity: "0.9"}}>
-                                    <input 
-                                        className="SearchBar"
-                                        type="text" placeholder="Search news..."
-                                        onChange={this.onInputChange}
-                                        value={this.state.term}
-                                    />
+                            <div className="ui icon input focus home-search">
+                                <input
+                                    type="text" 
+                                    placeholder="Search news..."
+                                    onChange={this.onInputChange}
+                                    value={this.state.term}
+                                />
+                                <span onClick={this.onFormSubmit} className="search-icon">
                                     <i className="search icon"/>
-                                </div>
-                                {this.state.showEverything ? <Redirect to={{
-                                                            pathname:'/everything' , 
-                                                            state: {term: this.state.term}
-                                                        }} /> : null} 
+                                </span>
+                            </div>
+                            {this.state.showEverything ? <Redirect to={{pathname:'/everything', state: {term: this.state.term}}} /> : null} 
                         </div>
                     </div>
-                </div>
-            </form>
-        </div>
-        )
+                </form>
+            </div>
+        )   
     }
 }
 
