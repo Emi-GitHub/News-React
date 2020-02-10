@@ -1,90 +1,96 @@
 import React, { Component } from 'react';
-import '../styles/MyStyle.css';
+import '../styles/Article.css';
 
 class Article extends Component {
      render() {
          const PictureCard = () => {
-            if(this.props.location.state.from.urlToImage==="null") return null
+            var articleImage = this.props.location.state.from.urlToImage;
+            if(articleImage ==="null") return null
             else return (
                 <div>
                     <img 
-                        className="ui fluid image" 
-                        style={{maxWidth:"800px", marginLeft:"auto", marginRight:"auto"}} 
-                        src={this.props.location.state.from.urlToImage} 
+                        className="ui fluid image article-image" 
+                        src={articleImage} 
                     /> 
                 </div>
             )
         }
         const Title = () => {
-            if(this.props.location.state.from.title==="null") return null
+            var articleTitle = this.props.location.state.from.title;
+            if(articleTitle ==="null") return null
             else return (
                 <div>
-                    <h1 className="headerArticle">{this.props.location.state.from.title}</h1>
+                    <h1 className="header-article">{articleTitle}</h1>
                     <div className="ui divider"></div>
                 </div>
             )
         }
         const Author = () => {
-            if(this.props.location.state.from.author==="null") return null
+            var articleAuthor = this.props.location.state.from.author;
+            if( articleAuthor ==="null") return null
             else return(
-                <div style={{opacity:"0.5"}}>
+                <div className="article-light">
                     By: 
-                    {' '+this.props.location.state.from.author}
+                    {' ' + articleAuthor}
                     <br/>
                 </div>
             )
         }
         const Description = () => {
-            if(this.props.location.state.from.description==="null") return null
+            var articleDesc = this.props.location.state.from.description;
+            if(articleDesc === "null") return null
             else return (
                 <div>
-                    <b style={{fontSize:"20px"}}>{this.props.location.state.from.description}</b>
+                    <b className="article-desc">{articleDesc}</b>
                     <br/><br/>
                 </div>
             )
         }
         const Content = () => {
-            if(this.props.location.state.from.content==="null") return null
+            var articleContent = this.props.location.state.from.content;
+            if(articleContent === "null") return null
             else return(
-                <div style={{fontSize:"15px"}}>
-                    {this.props.location.state.from.content}
+                <div className="article-content">
+                    {articleContent}
                     <br/><br/>
                 </div>
             )
         }
         const functionForPublished = () => {
-            var output =  this.props.location.state.from.publishedAt.split('');
+            var output = this.props.location.state.from.publishedAt.split('');
             var i = 0;
-            var pomocna = '';
+            var publishedDate = '';
             while(output[i]!=='T') {
-                pomocna = pomocna + output[i]
+                publishedDate = publishedDate + output[i]
                 i++
             }
-           return pomocna
+           return publishedDate
         }
         const Published = () => {
-            if(this.props.location.state.from.publishedAt==="null") return null
+            var articlePublished = this.props.location.state.from.publishedAt;
+            if(articlePublished ==="null") return null;
             else return (
-                <div style={{opacity:"0.5"}}>
+                <div className="article-light">
                     Published at:
-                    {' '+functionForPublished()}
+                    {' ' + functionForPublished()}
                     <br/>
                 </div>
             )
         }
         const Source = () => {
-            if(this.props.location.state.from.source.name==="null") return null
+            var articleSource = this.props.location.state.from.source.name;
+            if(articleSource === "null") return null;
             else return(
-                <div style={{opacity:"0.5"}}>
+                <div className="article-light">
                      Source:
-                    {' ' + this.props.location.state.from.source.name}
+                    {' ' + articleSource}
                     <br/> <br/>
                 </div>
             )
         }
          return (
-            <div className=" backgroundArticle ui inverted segment" >
-                <div className="ui container" style={{marginTop:"10px"}}>
+            <div className="ui container background-article">
+                <div className="ui container">
                     {Title()}  
                     {PictureCard()} 
                     {Source()}

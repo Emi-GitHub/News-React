@@ -32,9 +32,6 @@
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 40px;
     }
-    .backgroundArticle {
-        display: table-cell;
-    }
     .transparentDiv {
         margin-right: 20px;
         margin-left: 20px;
@@ -106,9 +103,6 @@
     }
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 40px;
-    }
-    .backgroundArticle {
-        display: table-cell;
     }
     .transparentDiv {
         margin-right: 20px;
@@ -192,9 +186,6 @@
     .cardStyle {
         width: 330px;
     }
-    .headerArticle {
-        font-size: xx-large;
-    }
     .radioButton {
         display: flex;
         margin-top: 10px;
@@ -221,9 +212,6 @@
     .ui.inverted.segment {
         display: table-cell;
         width: 2000px;
-    }
-    .backgroundArticle {
-        height: 810px;
     }
     .mySegment {
         /*background: rgba(6, 6, 7, 0.58);*/
