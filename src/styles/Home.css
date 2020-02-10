@@ -41,9 +41,6 @@
 .ui.form .inline.fields {
     display: -webkit-inline-box;
 }
-h1, h2, h3, h4, h5 {
-    line-height: 1 !important;
-}
 /*phones*/
 @media screen and (max-width: 500px){
     .background {

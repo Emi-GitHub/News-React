@@ -13,7 +13,6 @@ class Everything extends Component {
         rememberTerm:'',
         checkRadio: true,
         showError: false,
-        showErrorQ: false,
         radio1: true,
         radio2: false,
         radio3: false,
@@ -33,11 +32,6 @@ class Everything extends Component {
         const API_KEY = 'apiKey=a9c0ed9d6b6e492db95b5b87b686b064';
         const q=term; 
         const url = BASE_URL + 'q=' + q + '&'+ API_KEY;
-        if(q===''){
-            this.setState({
-                showErrorQ: true
-            })
-        }
         axios.get(url).then(response => {
             this.setState({
                 news: response.data.articles,
@@ -86,11 +80,6 @@ class Everything extends Component {
         const API_KEY = 'apiKey=a9c0ed9d6b6e492db95b5b87b686b064';
         const q=term; 
         const url = BASE_URL + 'q=' + q + '&sortBy='+ sortBy +'&'+ API_KEY;
-        if(q===''){
-            this.setState({
-                showErrorQ: true
-            })
-        }
         axios.get(url).then(response => {
             this.setState({
                 news: response.data.articles,
@@ -105,10 +94,15 @@ class Everything extends Component {
         })  
     }
     render() {
-        if(this.state.showError || this.state.showErrorQ){
+        if(this.state.showError){
             return (
                 <div>
-                    <h1>Not found!</h1>
+                    <p>Your search - <b>{this.state.rememberTerm}</b> - did not match any documents.</p>
+                    <p>Suggestions:</p> 
+                    <li>Make sure that all words are apelled correctly.</li>
+                    <li>Try different keywords.</li>
+                    <li>Try more general keywords</li>
+                    <li>Try fewer keywords</li>
                 </div>
             )
         }
@@ -138,6 +132,7 @@ class Everything extends Component {
                                     <div className="header-top">Search for...</div>
                                     <NewsList news={this.state.news} />
                                     <ButtonBar news={this.state.news} /> 
+                                    {this.state.showError || this.state.showErrorQ ? <div>Not found</div> : null}
                                 </div>
                             </div>
                         </div>
