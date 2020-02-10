@@ -313,9 +313,6 @@
 .mojaSearch{
     display: none;
 }
-.loadMoreButton {
-    margin-top: 20px;
-}
 .ui.segment:last-child {
     margin-bottom: 15px;
 }
