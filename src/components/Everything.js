@@ -101,7 +101,7 @@ class Everything extends Component {
                 <div>
                     <p>Your search - <b>{this.state.rememberTerm}</b> - did not match any documents.</p>
                     <p>Suggestions:</p> 
-                    <li>Make sure that all words are apelled correctly.</li>
+                    <li>Make sure that all words are spelled correctly.</li>
                     <li>Try different keywords.</li>
                     <li>Try more general keywords</li>
                     <li>Try fewer keywords</li>
