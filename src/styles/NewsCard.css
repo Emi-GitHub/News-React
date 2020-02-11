@@ -40,7 +40,8 @@
     }
     .card-header {
         margin-top: 5px;
-        margin-bottom: 5px;
+        margin-bottom: 3px;
+		font-size: 1.08571429rem !important;
     }
 }
 /*tablets*/
@@ -54,8 +55,9 @@
         max-height: 100px;
     }
     .card-header {
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 3px;
+        margin-bottom: 0px;
+		font-size: 1.08571429rem !important;
     }
 }
 /*desktops*/
@@ -75,5 +77,6 @@
     .card-header {
         margin-top: 15px;
         margin-bottom: 5px;
+        font-size: 1.28571429rem !important;
     }
 }
