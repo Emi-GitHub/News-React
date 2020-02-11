@@ -16,7 +16,7 @@ class Home extends Component {
     }
     TopHeadlinesApi = () => {
         const BASE_URL = 'https://newsapi.org/v2/top-headlines?';
-        const API_KEY = 'apiKey=a9c0ed9d6b6e492db95b5b87b686b064';
+        const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
         const url = BASE_URL + 'country=us&' + API_KEY;
         axios.get(url).then(response => {
             this.setState({
@@ -28,7 +28,7 @@ class Home extends Component {
                 forHeader: 'topheadlines-card'
             })
         })
-        .catch(error => console.error('On create student error', error))  
+        .catch(error => console.error('Api error', error))  
     }
     componentDidMount(){
         this.TopHeadlinesApi()

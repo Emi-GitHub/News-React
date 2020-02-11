@@ -11,14 +11,14 @@ class Article extends Component {
                     <img 
                         className="ui fluid image article-image" 
                         src={articleImage} 
-                        alt="not found"
+                        alt="not found img"
                     /> 
                 </div>
             )
         }
         const Title = () => {
             var articleTitle = this.props.location.state.from.title;
-            if(articleTitle ==="null") return null
+            if(articleTitle === "null") return null
             else return (
                 <div>
                     <h1 className="header-article">{articleTitle}</h1>
@@ -28,7 +28,7 @@ class Article extends Component {
         }
         const Author = () => {
             var articleAuthor = this.props.location.state.from.author;
-            if( articleAuthor ==="null") return null
+            if( articleAuthor === "null") return null
             else return(
                 <div className="article-light">
                     By: 
@@ -69,7 +69,7 @@ class Article extends Component {
         }
         const Published = () => {
             var articlePublished = this.props.location.state.from.publishedAt;
-            if(articlePublished ==="null") return null;
+            if(articlePublished === "null") return null;
             else return (
                 <div className="article-light">
                     Published at:

@@ -8,7 +8,7 @@ class NewsCard extends Component {
             backgroundImage: 'url(' + this.props.pic + ')'
         }
         const PictureCard = () => {
-            if(this.props.pic==="null") return null
+            if(this.props.pic === "null") return null
             else return <div style={backgroundImgStyle} className="card-photo"/> 
         }
         return (

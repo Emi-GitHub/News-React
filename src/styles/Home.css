@@ -1,11 +1,11 @@
-.loaded-api{
+.loaded-api {
     height: 1000px; 
     display: flex;
 }
-.hide-app{
+.hide-app {
     display: none;
 }
-.nothing{
+.nothing {
     margin-bottom: 0px;
 }
 .background {

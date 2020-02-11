@@ -36,7 +36,7 @@ class SearchBarEverything extends Component {
                                     checked={this.props.radio1}  
                                     onChange={this.handleOptionChange}
                                 />
-                                <label className="sort-radio"> Popularity</label>
+                                <label className="sort-radio">Popularity</label>
                             </div>
                         </div>
                         <div className="field">

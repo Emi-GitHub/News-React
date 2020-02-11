@@ -5,7 +5,7 @@ import '../styles/LoadMore.css';
 
 function LoadMore(props) {
     const news = props.news.map((item, i)=> {
-        if(i>=20) return (<NewsCard key={item.url} item={item} pic={item.urlToImage} />)
+        if(i >= 20) return (<NewsCard key={item.url} item={item} pic={item.urlToImage} />)
         return true;
     }); 
     return (

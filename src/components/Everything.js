@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import NewsList from './NewsList';
 import ButtonBar from './ButtonBar';
 import SearchBarEverything from './SearchBarEverything';
-import axios from 'axios';
 import '../styles/Home.css';
 import '../styles/Everything.css';
 
@@ -12,10 +12,10 @@ class Everything extends Component {
         news: [],
         rememberTerm:'',
         checkRadio: true,
-        showError: false,
         radio1: true,
         radio2: false,
         radio3: false,
+        showError: false,
         background: 'ui text loader', 
         loaded: 'loaded-api',
         loading: 'ui active inverted dimmer',
@@ -29,9 +29,9 @@ class Everything extends Component {
             radio3: false
         })
         const BASE_URL = 'https://newsapi.org/v2/everything?';
-        const API_KEY = 'apiKey=a9c0ed9d6b6e492db95b5b87b686b064';
-        const q=term; 
-        const url = BASE_URL + 'q=' + q + '&'+ API_KEY;
+        const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
+        const q = term; 
+        const url = BASE_URL + 'q=' + q + '&' + API_KEY;
         axios.get(url).then(response => {
             this.setState({
                 news: response.data.articles,
@@ -43,13 +43,13 @@ class Everything extends Component {
                 forSearch: 'nothing',
                 forHeader: 'topheadlines-card'
             })
-            if(this.state.news.length===0){
+            if(this.state.news.length === 0){
                 this.setState({
                     showError: true
                 })
             }
         })
-        .catch(error => console.error('On create student error', error)) 
+        .catch(error => console.error('Api error', error)) 
     }
     EverythingApiCheck = ( term, radio ) => {
         var sortBy;
@@ -59,7 +59,7 @@ class Everything extends Component {
                 radio2: false,
                 radio3: false
             })
-            sortBy='populartiy';
+            sortBy = 'populartiy';
         }
         else if(radio === "radio2") {
             this.setState({
@@ -67,7 +67,7 @@ class Everything extends Component {
                 radio2: true,
                 radio3: false
             })
-            sortBy='relevance';
+            sortBy = 'relevance';
         }
         else if(radio === "radio3") {
             this.setState({
@@ -75,25 +75,25 @@ class Everything extends Component {
                 radio2: false,
                 radio3: true
             })
-            sortBy='publishedAt';
+            sortBy = 'publishedAt';
         }
         const BASE_URL = 'https://newsapi.org/v2/everything?';
-        const API_KEY = 'apiKey=a9c0ed9d6b6e492db95b5b87b686b064';
-        const q=term; 
-        const url = BASE_URL + 'q=' + q + '&sortBy='+ sortBy +'&'+ API_KEY;
+        const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
+        const q = term; 
+        const url = BASE_URL + 'q=' + q + '&sortBy=' + sortBy + '&' + API_KEY;
         axios.get(url).then(response => {
             this.setState({
                 news: response.data.articles,
                 checkRadio: true,
                 rememberTerm: q
             })
-            if(this.state.news.length===0){
+            if(this.state.news.length === 0){
                 this.setState({
                     showError: true
                 })
             }
         })
-        .catch(error => console.error('On create student error', error))  
+        .catch(error => console.error('Api error', error))  
     }
     render() {
         if(this.state.showError){
