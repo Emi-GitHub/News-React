@@ -28,7 +28,7 @@ class SearchBarEverything extends Component {
                     <div className="inline fields sort-section">
                         <label className="label-sort"> Sort by section: </label>
                         <div className="field">
-                            <div className="ui radio checkbox" >
+                            <div className="ui radio checkbox popularity-radio" >
                                 <input 
                                     type="radio" 
                                     name="radio1" 
@@ -40,7 +40,7 @@ class SearchBarEverything extends Component {
                             </div>
                         </div>
                         <div className="field">
-                            <div className="ui radio checkbox" >
+                            <div className="ui radio checkbox relevance-radio" >
                                 <input 
                                     type="radio" 
                                     name="radio2"  
@@ -52,7 +52,7 @@ class SearchBarEverything extends Component {
                             </div>
                         </div>
                         <div className="field">
-                            <div className="ui radio checkbox">
+                            <div className="ui radio checkbox publiched-radio">
                                 <input 
                                     type="radio" 
                                     name="radio3" 

@@ -1,5 +1,4 @@
 .radio-button {
-    display: flex;
     margin-top: 10px;
 }
 .sort-section {
@@ -18,15 +17,46 @@
 .search-sort {
     margin-top: 10px;
 }
+.publiched-radio {
+    font-size: medium !important;
+}
+.relevance-radio {
+    font-size: medium !important;
+}
+.popularity-radio {
+    font-size: medium !important;
+}
+/*phones*/
+@media screen and (max-width: 500px){
+    .publiched-radio {
+        margin-left: 126px !important;
+        margin-top: 7px !important;
+    }
+    .ui.radio.checkbox .box, .ui.radio.checkbox label {
+        padding-left: 1.15714em;
+    }
+}
 /*tablets*/
 @media screen and (min-width: 501px){
     .sort-section {
         flex: 1 0 auto;
+    }
+    .radio-button {
+        margin-top: 10px;
+        margin: auto;
+        width: 90%;
+        padding: 10px;
     }
 }
 /*desktops*/
 @media screen and (min-width: 850px){
     .sort-section {
         flex: 1 0 auto;
+    }
+    .radio-button {
+        margin-top: 10px;
+        margin: auto;
+        width: 60%;
+        padding: 10px;
     }
 }
