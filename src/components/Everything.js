@@ -89,8 +89,8 @@ class Everything extends Component {
                     <p>Suggestions:</p> 
                     <li>Make sure that all words are spelled correctly.</li>
                     <li>Try different keywords.</li>
-                    <li>Try more general keywords</li>
-                    <li>Try fewer keywords</li>
+                    <li>Try more general keywords.</li>
+                    <li>Try fewer keywords.</li>
                 </div>
             )
         }
