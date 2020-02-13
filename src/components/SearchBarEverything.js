@@ -84,7 +84,7 @@ class SearchBarEverything extends Component {
                                 </span>
                             </div>
                         </div>
-                        {this.props.checkRadio ? searchForOptions() : null}
+                        { searchForOptions() }
                     </div>
                 </form>
             </div>

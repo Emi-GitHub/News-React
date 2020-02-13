@@ -1,3 +1,15 @@
 .go-back {
     color: #bdbdbd;
 }
+/*.not-found {
+    color: white;
+    height: 500px;
+    width: 1450px;
+    font-size: medium;
+}*/
+.not-found {
+    /*display: flex;
+    flex-direction: column;*/
+    color: white;
+    font-size: medium;
+}

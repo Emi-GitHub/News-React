@@ -11,11 +11,9 @@ class Everything extends Component {
     state = {
         news: [],
         rememberTerm:'',
-        checkRadio: true,
         radio1: true,
         radio2: false,
         radio3: false,
-        showError: false,
         background: 'ui text loader', 
         loaded: 'loaded-api',
         loading: 'ui active inverted dimmer',
@@ -35,7 +33,6 @@ class Everything extends Component {
         axios.get(url).then(response => {
             this.setState({
                 news: response.data.articles,
-                checkRadio: true,
                 rememberTerm: q,
                 background: 'background',
                 loaded: 'nothing',
@@ -43,11 +40,6 @@ class Everything extends Component {
                 forSearch: 'nothing',
                 forHeader: 'topheadlines-card'
             })
-            if(this.state.news.length === 0){
-                this.setState({
-                    showError: true
-                })
-            }
         })
         .catch(error => console.error('Api error', error)) 
     }
@@ -84,21 +76,15 @@ class Everything extends Component {
         axios.get(url).then(response => {
             this.setState({
                 news: response.data.articles,
-                checkRadio: true,
                 rememberTerm: q
             })
-            if(this.state.news.length === 0){
-                this.setState({
-                    showError: true
-                })
-            }
         })
         .catch(error => console.error('Api error', error))  
     }
     render() {
-        if(this.state.showError){
+        const notFound = () =>{
             return (
-                <div>
+                <div className="not-found"> 
                     <p>Your search - <b>{this.state.rememberTerm}</b> - did not match any documents.</p>
                     <p>Suggestions:</p> 
                     <li>Make sure that all words are spelled correctly.</li>
@@ -116,7 +102,6 @@ class Everything extends Component {
                             <SearchBarEverything 
                                 EverythingApi={this.EverythingApi} 
                                 EverythingApiCheck={this.EverythingApiCheck} 
-                                checkRadio={this.state.checkRadio} 
                                 rememberTerm={this.state.rememberTerm} 
                                 radio1={this.state.radio1} 
                                 radio2={this.state.radio2} 
@@ -127,14 +112,13 @@ class Everything extends Component {
                         <div className={this.state.forSearch}>
                             <div className="topheadlines-card">
                                 <div className="transparent-div">
-                                    <Link to="/" onClick={this.onHomeClick} className="go-back">
+                                    <Link to="/" className="go-back">
                                         <i className="left chevron icon"/>
                                         Go back to home page
                                     </Link>
                                     <div className="header-top">Search for...</div>
                                     <NewsList news={this.state.news} />
-                                    <ButtonBar news={this.state.news} /> 
-                                    {this.state.showError || this.state.showErrorQ ? <div>Not found</div> : null}
+                                    {this.state.news.length === 0 ? notFound() : <ButtonBar news={this.state.news} /> }
                                 </div>
                             </div>
                         </div>

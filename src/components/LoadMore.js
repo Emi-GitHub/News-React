@@ -10,7 +10,6 @@ function LoadMore(props) {
     }); 
     return (
         <div className="cards-wrapper">
-            {props.topHeadlines ? <h2 className="header-top">Top headlines</h2> : null}
             {news}
         </div>
     )

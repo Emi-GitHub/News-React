@@ -4,8 +4,7 @@ import '../styles/ButtonBar.css';
 
 class ButtonBar extends Component {
     state = {
-        show: false,
-        topHeadlines: false
+        show: false
     }
     onButtonClick = () => {
         this.setState({
@@ -16,7 +15,7 @@ class ButtonBar extends Component {
         return (
             <div>
                 <button className="fluid ui button loadmore-button" onClick={this.onButtonClick}>Load more</button>
-                {this.state.show && <LoadMore news={this.props.news} topHeadlines={this.state.topHeadlines} />}
+                {this.state.show && <LoadMore news={this.props.news} />}
                 {!this.state.show ? this.onButtonClick : null}
             </div>
         )
