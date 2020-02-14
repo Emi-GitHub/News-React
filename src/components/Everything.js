@@ -11,9 +11,7 @@ class Everything extends Component {
     state = {
         news: [],
         rememberTerm:'',
-        radio1: true,
-        radio2: false,
-        radio3: false,
+        selectedOption: 'option1',
         background: 'ui text loader', 
         loaded: 'loaded-api',
         loading: 'ui active inverted dimmer',
@@ -22,9 +20,7 @@ class Everything extends Component {
     }
     EverythingApi = term => {
         this.setState({
-            radio1: true,
-            radio2: false,
-            radio3: false
+            selectedOption: 'option1'
         })
         const BASE_URL = 'https://newsapi.org/v2/everything?';
         const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
@@ -45,27 +41,21 @@ class Everything extends Component {
     }
     EverythingApiCheck = ( term, radio ) => {
         var sortBy;
-        if(radio === "radio1") {
+        if(radio === "option1") {
             this.setState({
-                radio1: true,
-                radio2: false,
-                radio3: false
+                selectedOption: radio
             })
             sortBy = 'populartiy';
         }
-        else if(radio === "radio2") {
+        else if(radio === "option2") {
             this.setState({
-                radio1: false,
-                radio2: true,
-                radio3: false
+                selectedOption: radio
             })
             sortBy = 'relevance';
         }
-        else if(radio === "radio3") {
+        else if(radio === "option3") {
             this.setState({
-                radio1: false,
-                radio2: false,
-                radio3: true
+                selectedOption: radio
             })
             sortBy = 'publishedAt';
         }
@@ -103,9 +93,7 @@ class Everything extends Component {
                                 EverythingApi={this.EverythingApi} 
                                 EverythingApiCheck={this.EverythingApiCheck} 
                                 rememberTerm={this.state.rememberTerm} 
-                                radio1={this.state.radio1} 
-                                radio2={this.state.radio2} 
-                                radio3={this.state.radio3}
+                                selectedOption={this.state.selectedOption}
                                 firstTerm = {this.props.location.state.term}
                             />
                         </div>

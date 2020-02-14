@@ -32,8 +32,8 @@ class SearchBarEverything extends Component {
                                 <input 
                                     type="radio" 
                                     name="radio1" 
-                                    value="radio1" 
-                                    checked={this.props.radio1}  
+                                    value="option1" 
+                                    checked={this.props.selectedOption === 'option1'}  
                                     onChange={this.handleOptionChange}
                                 />
                                 <label className="sort-radio">Popularity</label>
@@ -44,8 +44,8 @@ class SearchBarEverything extends Component {
                                 <input 
                                     type="radio" 
                                     name="radio2"  
-                                    value="radio2" 
-                                    checked={this.props.radio2}  
+                                    value="option2" 
+                                    checked={this.props.selectedOption === 'option2'}  
                                     onChange={this.handleOptionChange}
                                 />
                                 <label className="sort-radio">Relevance</label>
@@ -56,8 +56,8 @@ class SearchBarEverything extends Component {
                                 <input 
                                     type="radio" 
                                     name="radio3" 
-                                    value="radio3" 
-                                    checked={this.props.radio3}  
+                                    value="option3" 
+                                    checked={this.props.selectedOption === 'option3'}  
                                     onChange={this.handleOptionChange}
                                 />
                                 <label className="sort-radio">Published date</label>
