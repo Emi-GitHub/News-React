@@ -25,7 +25,8 @@ class Everything extends Component {
         const BASE_URL = 'https://newsapi.org/v2/everything?';
         const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
         const q = term; 
-        const url = BASE_URL + 'q=' + q + '&' + API_KEY;
+		const sortBy = 'popularity';
+        const url = BASE_URL + 'q=' + q + '&sortBy=' + sortBy + '&' + API_KEY;
         axios.get(url).then(response => {
             this.setState({
                 news: response.data.articles,
