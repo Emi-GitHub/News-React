@@ -1,4 +1,5 @@
 Task: News portal
+
 API: https://newsapi.org/ (you will need  to create a free api key at https://newsapi.org/account for developers)
 
 1. Landing page with search
@@ -22,6 +23,7 @@ Once the user searches for the first term there should appear a 'sort by section
 User should be able to go back to home page displaying top headlines.
 
 NOTES:
+
 - UI needs to be fully responsive
 - Other then specification that the news on landing page should be displayed in cards, we have no more demands. It is up to you to show us your creativity and style these components the way you want to.
 - You are allowed to use UI library of your own choosing.
