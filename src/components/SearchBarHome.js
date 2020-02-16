@@ -13,6 +13,11 @@ class SearchBarHome extends Component {
             showEverything: true,
         })
     }
+	onSearchSubmit = () => {
+		this.setState({
+			showEverything: true,
+		})
+	}
     onInputChange = event => {
         this.setState({
             term: event.target.value
@@ -31,7 +36,7 @@ class SearchBarHome extends Component {
                                     onChange={this.onInputChange}
                                     value={this.state.term}
                                 />
-                                <span onClick={this.onFormSubmit} className="search-icon">
+                                <span onClick={this.onSearchSubmit} className="search-icon">
                                     <i className="search icon"/>
                                 </span>
                             </div>

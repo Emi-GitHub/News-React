@@ -9,16 +9,18 @@
     margin-bottom: 0px;
 }
 .background {
-    height: auto;
-    width: auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    position: absolute;
+    min-height: 100vh;
 }
 .topheadlines-card {
     padding: 20px;
+    padding-left: 79.5px;
+    padding-right: 81.5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .header-top {
     font-family: 'Roboto', sans-serif;
@@ -34,6 +36,7 @@
     border-radius: 5px;
     padding-top: 20px;
     padding-bottom: 30px;
+	width: 100%;
 }
 .ui.segment:last-child {
     margin-bottom: 15px;
@@ -49,8 +52,6 @@
     .transparent-div {
         padding-left: 10px;
         padding-right: 10px;
-        margin-left: 15px;
-        margin-right: 15px;
     }
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 40px;
@@ -77,8 +78,6 @@
     .transparent-div {
         padding-left: 50px;
         padding-right: 50px;
-        margin-left: 60px;
-        margin-right: 60px;
     }
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 160px;
