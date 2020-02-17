@@ -17,8 +17,6 @@
 }
 .topheadlines-card {
     padding: 20px;
-    padding-left: 79.5px;
-    padding-right: 81.5px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -36,7 +34,7 @@
     border-radius: 5px;
     padding-top: 20px;
     padding-bottom: 30px;
-	width: 100%;
+    width: 100%;
 }
 .ui.segment:last-child {
     margin-bottom: 15px;
@@ -56,6 +54,13 @@
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 40px;
     }
+    .topheadlines-card {
+        padding: 20px;
+        padding-left: 16.5px; 
+        padding-right: 43.5px; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 /*tablets*/
 @media screen and (min-width: 501px){
@@ -69,6 +74,13 @@
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 40px;
     }
+    .topheadlines-card {
+        padding: 20px;
+        padding-left: 25.5px; 
+        padding-right: 50.5px; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 /*desktops*/
 @media screen and (min-width: 850px){
@@ -81,5 +93,12 @@
     }
     .ui.basic.black.button, .ui.basic.black.buttons .button {
         margin-left: 160px;
+    }
+    .topheadlines-card {
+        padding: 20px;
+        padding-left: 79.5px;
+        padding-right: 81.5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }

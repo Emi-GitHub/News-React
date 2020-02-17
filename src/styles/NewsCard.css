@@ -28,7 +28,6 @@
     color: black;
 }
 .card-header {
-    max-height: 75px;
     margin-top: 13px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -45,6 +44,7 @@
         max-height: 100px;
     }
     .card-header {
+        max-height: 75px;
         margin-top: 5px;
         margin-bottom: 3px;
 		font-size: 1.08571429rem !important;
@@ -53,14 +53,15 @@
 /*tablets*/
 @media screen and (min-width: 501px){
     .card-style {
-        margin-left: 4px;
-        margin-right: 4px;
-        width: 230px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 235px;
     }
     .card-description {
         max-height: 100px;
     }
     .card-header {
+        max-height: 75px;
         margin-top: 3px;
         margin-bottom: 0px;
 		font-size: 1.08571429rem !important;
@@ -81,6 +82,7 @@
         margin-left: 160px;
     }
     .card-header {
+        max-height: 71px;
         margin-top: 15px;
         margin-bottom: 5px;
         font-size: 1.28571429rem !important;
