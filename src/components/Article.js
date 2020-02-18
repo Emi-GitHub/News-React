@@ -90,8 +90,8 @@ class Article extends Component {
             )
         }
          return (
-            <div className="ui container background-article">
-                <div className="ui container">
+            <div className="background-article">
+                <div className="transparent-div">
                     {Title()}  
                     {PictureCard()} 
                     {Source()}
