@@ -95,7 +95,7 @@ class Everything extends Component {
                                 EverythingApiCheck={this.EverythingApiCheck} 
                                 rememberTerm={this.state.rememberTerm} 
                                 selectedOption={this.state.selectedOption}
-                                firstTerm = {this.props.location.state.term}
+                                term = {this.props.location.state.term} /* cannot read property of undefined */
                             />
                         </div>
                         <div className={this.state.forSearch}>

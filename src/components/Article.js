@@ -71,7 +71,7 @@ class Article extends Component {
             var articlePublished = this.props.location.state.from.publishedAt;
             if(articlePublished === "null") return null;
             else return (
-                <div className="article-light">
+                <div className="article-light published-at">
                     Published at:
                     {' ' + functionForPublished()}
                     <br/>
@@ -82,7 +82,7 @@ class Article extends Component {
             var articleSource = this.props.location.state.from.source.name;
             if(articleSource === "null") return null;
             else return(
-                <div className="article-light">
+                <div className="article-light source">
                      Source:
                     {' ' + articleSource}
                     <br/> <br/>
